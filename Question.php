@@ -6,9 +6,10 @@ class Question{
 	private $cAnswer;
 	
 	
-	public function __construct($question, $answers, $cAnswer){
+	public function __construct($question, $answers, $cAnswer)
+	{
 		$this->question = $question;
-		$this->answers=$answers;
+		$this->answers = $answers;
 		$this->cAnswer = $cAnswer;
 	}
 	
@@ -47,4 +48,4 @@ class Question{
 		print $cAnswer;
 	}
 }
-?>
+?> 
