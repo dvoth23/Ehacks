@@ -1,3 +1,4 @@
+<div class="floatcontainer">
 <div class="sidebar">
 		<p>Disorders:</p>
 		<ul>
