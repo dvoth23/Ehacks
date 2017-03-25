@@ -7,7 +7,12 @@ $question = new Question('placeholder', array('yes', 'no', 'maybe', 'absolutely 
 $questions = $question->getQuestionArray();
 
 ?>
+<div class="description">
 
+<h2>Welcome to</h2>
+<h2>The Stimulus Project</h2>
+<p> This project is designed to stimulate individuals with <br> memory disorders by creating tests with a <br> more personal touch to them.   </p>
+</div>
 <div class="answers">
 		<ul>
 			<li> <?php echo $questions[0]; ?> </li>

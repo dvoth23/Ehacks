@@ -1,11 +1,38 @@
 @CHARSET "ISO-8859-1";
 
+body{
+	border: 1px solid black;
+}
+
 .sidebar{
+	float: left;
+	width: 20%;
+	height: 22%;
 	border: 1px solid blue;
-	padding: 10px, 10px;
+	box-sizing: border-box;
 	font-family: 'Quicksand', sans-serif;
 	text-align: left;
 	font-size: 16px;
+}
+.sidebar p{
+	text-align: center;
+	font-weight: bold;
+}
+
+.description{
+	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+	float: right;
+	position: relative;
+	left: -43%;
+	text-align: center;
+}
+
+.question{
+	float: right;
+}
+
+.answers{
+	float: right;
 }
 
 .question h2{
