@@ -1,11 +1,12 @@
 @CHARSET "ISO-8859-1";
 
 body{
-	border: 1px solid black;
+	margin: 0;
+	padding: 0;
+	background-image: url("../images/background2.jpg");
 }
 
 .sidebar{
-	float: left;
 	width: 20%;
 	height: 22%;
 	border: 1px solid blue;
@@ -21,18 +22,20 @@ body{
 
 .description{
 	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
-	float: right;
-	position: relative;
-	left: -43%;
+	justify-content: center;
 	text-align: center;
 }
 
 .question{
-	float: right;
+
 }
 
 .answers{
-	float: right;
+
+}
+
+.floatContainer{
+	float left;
 }
 
 .question h2{
