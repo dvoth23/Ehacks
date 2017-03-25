@@ -9,7 +9,7 @@ body{
 .sidebar{
 	width: 20%;
 	height: 22%;
-	border: 1px solid blue;
+	border: 1px solid black;
 	box-sizing: border-box;
 	font-family: 'Quicksand', sans-serif;
 	text-align: left;
@@ -26,7 +26,8 @@ body{
 	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
 	justify-content: center;
 	text-align: center;
-	margin-left: -25px;
+	margin-left: -2%;
+	margin-top: -10%;
 }
 
 .question{
