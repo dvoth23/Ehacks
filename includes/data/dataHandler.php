@@ -58,12 +58,15 @@ function getQuestionsArray($disorderId = 0) {
 	} catch (PDOException $e) {
 		echo $e;
 	}
-	while ($row = $stmt->fetchAll()) {
-		return $row;
+	while ($row = $stmt->fetchAll())
+	{
+		$questions[]=$row;
 	}
+	
+	return $questions;
 }
 
-getQuestionsArray();
+
 
 
 
