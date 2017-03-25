@@ -2,15 +2,14 @@
 class Question{
 	private $question;
 	public $answers;
-	private $imageURL;
-	private $cAnswer;
+	private $imageName;
 	
 	
-	public function __construct($question, $answers, $cAnswer)
+	public function __construct($question, $answers, $imageName)
 	{
 		$this->question = $question;
 		$this->answers = $answers;
-		$this->cAnswer = $cAnswer;
+		$this->cAnswer = $imageName;
 	}
 	
 	//ACCESSORS
@@ -20,14 +19,14 @@ class Question{
 	public function getAnswer(){
 		return $cAnswer;
 	}
-	public function getImageURL(){
-		return $imageURL;
+	public function getImageName(){
+		return $imageName;
 	}
 	public function getQuestionArray(){
 		return $this->answers;
 	}
-	public function setImageURL($imageURL){
-		$this->answer = $imageURL;
+	public function setImageURL($imageName){
+		$this->answer = $imageName;
 	}
 	
 	//CORRECT ANSWER OR NOT

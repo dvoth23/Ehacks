@@ -65,6 +65,15 @@ function getQuestionsArray($disorderId = 0) {
 	return $questions;
 }
 
+function arrayToObject($array) {
+	$answers = unserialize($array['answers']);
+	
+	$question  = new Question($array['question'], $array['answers'], $array['imageName']);
+	return $question;
+}
+
+var_dump(arrayToObject(getQuestionsArray()));
+
 
 
 
