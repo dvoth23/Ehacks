@@ -8,6 +8,7 @@ class Question{
 	
 	public function __construct($question, $answers, $cAnswer){
 		$this->question = $question;
+		$this->answers=$answers;
 		$this->cAnswer = $cAnswer;
 	}
 	
