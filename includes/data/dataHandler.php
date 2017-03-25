@@ -59,11 +59,11 @@ function getQuestionsArray($disorderId = 0) {
 		echo $e;
 	}
 	while ($row = $stmt->fetchAll()) {
-		return $row;
+		$questions[] = $row;
 	}
+	
+	return $questions;
 }
-
-getQuestionsArray();
 
 
 
