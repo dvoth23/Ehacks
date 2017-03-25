@@ -1,29 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<php>
-</php>
-	<div class="header">
-		<h1>The Stimulus Project</h1>
-	</div>
+<?php
+$question = new Question('placeholder', array('yes', 'no', 'maybe', 'absolutely not'), 'yes');
+$questions = $question->getQuestionArray();
+?>
 
-	<div class="sidebar">
-		<p>Disease List:</p>
+<div class="answers">
 		<ul>
-			<a href = "url that i dont have"> <li>Alzheimer's</li> </a>
-			<a href = "url that i dont have">> <li>Aphasia</li> </a>
-			<a href = "url that i dont have">> <li>Placeholder</li> </a>
+			<li> <?php echo $questions[0]; ?> </li>
+			<li> <?php echo $questions[1]; ?> </li>
+			<li> <?php echo $questions[2]; ?> </li>
+			<li> <?php echo $questions[3]; ?> </li>
 		</ul>
 	</div>
 
 	<div class="question">
 		<h1>Picture</h1>
 		<h2>Actual Question</h2>
-		<p>Question out of Total Questions</p>
+		<p></p>
 	</div>
 	
 </body>

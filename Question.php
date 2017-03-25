@@ -1,14 +1,14 @@
 <?php
 class Question{
 	private $question;
-	private $answers;
+	public $answers;
 	private $imageURL;
 	private $cAnswer;
 	
 	
 	public function __construct($question, $answers, $cAnswer){
-		setQuestion($question);
-		setAnswer($cAnswer);
+		$this->question = $question;
+		$this->cAnswer = $cAnswer;
 	}
 	
 	//ACCESSORS
@@ -21,11 +21,8 @@ class Question{
 	public function getImageURL(){
 		return $imageURL;
 	}
-	public function setQuestion($question){
-		$this->question = $question;
-	}
-	public function setAnswer($cAnswer){
-		$this->answer = $cAnswer;
+	public function getQuestionArray(){
+		return $this->answers;
 	}
 	public function setImageURL($imageURL){
 		$this->answer = $imageURL;

@@ -4,9 +4,15 @@
 }
 
 .sidebar{
+	border: 1px solid blue;
+	padding: 10px, 10px;
+	font-family: 'Quicksand', sans-serif;
+	text-align: left;
+	font-size: 16px;
 }
 
 .question h2{
+	font-size: 24px;
 }
 
 .question p{
