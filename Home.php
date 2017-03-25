@@ -1,9 +1,4 @@
-
-<html>
-<body>
-<p class="home">
-		<h1 align="center">The Stimulus Project</h1>
-	</p>
+<?php include 'includes/header.php'; ?>
 <p align="center">
 <a href="WebsiteFramework.php">Home</a> -
 <a href="about.php">About Us</a> -
