@@ -1,9 +1,7 @@
 <?php
 include 'config.php';
-include 'includes/header.php';
-include 'includes/sidebar.php';
-include 'WebsiteFramework.php';
+//include 'includes/header.php';
+//include 'includes/sidebar.php';
+//include 'WebsiteFramework.php';
 include 'Home.php';
-echo "hello world";
-
 ?>

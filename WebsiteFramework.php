@@ -1,6 +1,11 @@
+
 <?php
+include 'includes/header.php';
+include 'includes/sidebar.php';
+include 'config.php';
 $question = new Question('placeholder', array('yes', 'no', 'maybe', 'absolutely not'), 'yes');
 $questions = $question->getQuestionArray();
+
 ?>
 
 <div class="answers">
