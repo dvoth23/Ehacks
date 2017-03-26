@@ -45,6 +45,8 @@ function getDisorder() {
 }
 
 function getQuestionsArray($disorderId = 0) {
+	
+	$questions = array();
 
 	$pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -62,17 +64,20 @@ function getQuestionsArray($disorderId = 0) {
 		$questions[] = $row;
 	}
 	
-	return $questions;
+	return arrayToObject($questions);
 }
 
 function arrayToObject($array) {
-	$answers = unserialize($array['answers']);
+	$answers = unserialize($array[0][0]['answers']);
 	
-	$question  = new Question($array['question'], $array['answers'], $array['imageName']);
+	$question  = new Question($array[0][0]['question'], $answers, $array[0][0]['imageName']);
 	return $question;
 }
 
-var_dump(arrayToObject(getQuestionsArray()));
+function countQuestions() {
+	return count(getQuestionsArray());
+}
+
 
 
 

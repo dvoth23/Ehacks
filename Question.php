@@ -14,19 +14,16 @@ class Question{
 	
 	//ACCESSORS
 	public function getQuestion(){
-		return $question;
-	}
-	public function getAnswer(){
-		return $cAnswer;
+		return $this->question;
 	}
 	public function getImageName(){
-		return $imageName;
+		return $this->imageName;
 	}
 	public function getQuestionArray(){
 		return $this->answers;
 	}
-	public function setImageURL($imageName){
-		$this->answer = $imageName;
+	public function setImageName($imageName){
+		$this->imageName = $imageName;
 	}
 	
 	//CORRECT ANSWER OR NOT
