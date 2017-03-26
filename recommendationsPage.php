@@ -12,6 +12,7 @@ include 'includes/sidebar.php';
 </head>
 <body>
 <div class="recommendation">
+<h2 align = "center">Recommendation Page </h2> <br> <br>
 	<p><b> Dementia: </b><br> Dementia is typically diagnosed with early stages
 	of memory lose. <br> Some good questions to ask them are:</p>
 		<ul>

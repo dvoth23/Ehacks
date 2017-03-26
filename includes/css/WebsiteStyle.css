@@ -10,12 +10,17 @@ a {
 	color:black;
 }
 
-ul {
+.recommendation li{
+	margin-left: 2%;
+}
+
+.sidebar ul {
 	list-style:none;
 	text-align:center;
 }
 
-li {
+.sidebar li {
+	margin-left: 2%;
 	margin:10px;
 	display:inline-block;
 	width:15%;
@@ -31,6 +36,10 @@ body{
 }
 
 .sidebar{
+	background-image: url("../images/background.jpg");
+	width: 20%;
+	width: auto;
+	height: 22%;
 	width: 100%;
 	height: 15%;
 	border: 1px solid black;
@@ -77,15 +86,15 @@ body{
 	justify-content: center;
 	text-align: center;
 	margin-left: -2%;
-	margin-top: -10%;
+	margin-top: 0%;
 }
 
 .question{
 
 }
 
-.answers{
-
+.answer{
+	width: 400px;
 }
 
 .floatContainer{
@@ -111,4 +120,14 @@ body{
 .recommendation{
 	margin-left: 2%;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+
+.testform{
+	margin-left: 2%;
+	line-height: 150%;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+.testform h1{
+	font-size: 24px;
+	text-decoration: underline;
 }
