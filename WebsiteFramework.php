@@ -1,9 +1,6 @@
 
 <?php
 include 'config.php';
-$question = new Question('placeholder', array('yes', 'no', 'maybe', 'absolutely not'), 'yes');
-$questions = $question->getQuestionArray();
-
 ?>
 <div class="description">
 
