@@ -1,32 +1,30 @@
 <?php
-
-include 'includes/header.php';
-include 'includes/sidebar.php';
 include 'config.php';
-include 'includes/data/dataHandler.php';
 
-$questions = getQuestionsArray();
+$questions = questionsToObject(getQuestionsArray() );
+
 ?>
 
 <div class="testingContainer">
 	<div class="questionContainer">
-		<form>
+		<form action="gradeTest.php" method="post">
 			<?php
-			$counter = 1;
+			$questionCounter = 1;
 			foreach ($questions as $question){
-				echo "<p> Question " . $counter . ": " . $questions->getQuestion() . "</p>";
+				echo "<p> Question " . $questionCounter . ": " . $question->getQuestion() . "</p>";
+				echo "<input type='hidden' name='question" . $questionCounter . "' value=" . $question->getQuestion() . "/>";
 				
-				foreach ($questions->getQuestionArray() as $answer) {
-					echo "<ul class='answerList'>";
-					echo "<li>" . $answer . "</p>";
-					echo "</ul>";
+				foreach ($question->getQuestionArray() as $answer) {
+					echo "<input type='radio' name='answer" . $questionCounter ."' value='" . $answer . "'/>";
+					echo "<label class='answerLabel' for='answer" . $questionCounter ."'>" . $answer . "</label></br>";
 				}
 				
-				echo "<p>" . $questions->getImageName() . "</p>";
+				echo "<p>" . $question->getImageName() . "</p>";
 				echo "</br>";
-				$counter++;
+				$questionCounter++;
 			}
 			?>
+			<input type="submit" name="submitTest" />
 		</form>
 	</div>
 

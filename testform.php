@@ -1,7 +1,5 @@
 <?php
 include 'config.php';
-include 'includes/header.php';
-include 'includes/sidebar.php';
 ?>
 
 
@@ -59,19 +57,21 @@ function test_input($data) {
 <div class="testform">
 <h2>Custom Test Creation: </h2>
 <p><span class="error">* required field.</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Test Name: <input type="text" name="test" value="<?php echo $test;?>">
-  <span class="error">* <?php echo $nameErr;?></span>
+<form name="questionForm" method="post" action="includes/data/addQuestion.php">  
+<!--
+  Test Name: <input type="text" name="test" value="<?php //echo $test;?>">
+  <span class="error">* <?php //echo $nameErr;?></span>
   <br><br>
-  Question: <input type="text" name="question" value="<?php echo $question;?>">
+  -->
+  Question: <input type="text" name="question" value="<?php echo $question;?>" required>
   <span class="error">* <?php echo $questionErr;?></span>
   <br><br>
 
   Answers (Mark the Correct One):<br>
-<input type="checkbox" name="correct answer" value="Answer 1" > <input class="answer" type = "text" name = "q1" > <br>
-<input type="checkbox" name="correct answer" value="Answer 2"> <input class ="answer" type = "text" name = "q2" > <br>
-<input type="checkbox" name="correct answer" value="Answer 3" > <input class = "answer" type = "text" name = "q3" > <br>
-<input type="checkbox" name="correct answer" value="Answer 4"> <input class = "answer" type = "text" name = "q4" > <br>
+<input type="checkbox" name="correctAnswer1" value="selected1" /> <input class="answer" type = "text" name = "q1" required/> <br>
+<input type="checkbox" name="correctAnswer2" value="selected2"/> <input class ="answer" type = "text" name = "q2" required/> <br>
+<input type="checkbox" name="correctAnswer3" value="selected3" /> <input class = "answer" type = "text" name = "q3" required/> <br>
+<input type="checkbox" name="correctAnswer4" value="selected4"/> <input class = "answer" type = "text" name = "q4" required/> <br>
   <span class="error"> <?php echo $answerError;?></span>
   <br><br>
   <input type="submit" name="submit" value="Submit">  
