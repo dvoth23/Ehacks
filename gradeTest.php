@@ -2,19 +2,30 @@
 
 include 'config.php';
 
-$questions = questionsToObject(getQuestionsArray());
-$questionCounter = 1;
-
-foreach($questions as $question) {
+if(isset($_POST['submitTest'])) {
+	$questions = questionsToObject(getQuestionsArray());
+	$questionCounter = 1;
 	
-	$selectedAnswer = $_POST['answer' . $questionCounter];
+	foreach($questions as $question) {
 	
-	if ($selectedAnswer == $question->getcAnswer()) {
-		echo "Question " . $questionCounter . " correct</br>";
-		$question->setGotCorrect(true);
-	} else {
-		echo "Question " . $questionCounter . " incorrect</br>";
-		$question->setGotCorrect(false);
+		$selectedAnswer = $_POST['answer' . $questionCounter];
+	
+		if ($selectedAnswer == $question->getcAnswer()) {
+			echo "Question " . $questionCounter . " correct</br>";
+			$question->setGotCorrect(true);
+		} else {
+			echo "Question " . $questionCounter . " incorrect</br>";
+			$question->setGotCorrect(false);
+		}
+		$questionCounter++;
 	}
-	$questionCounter++;
+	
+	if (isset($_POST['informationPermission']) && isset($_POST['email'])) {
+		header("Location: report.php?sendEmail=true&email=".$_POST['email']);
+	} else {
+		header("Location: report.php");
+	}
+	
+	
 }
+
