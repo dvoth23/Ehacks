@@ -6,7 +6,7 @@ $questions = questionsToObject(getQuestionsArray());
 ?>
 <div class="report">
 <h1 style="font-size:22px"; >RESULTS</h1>
-<table  border:2px; border-collapse:collapse> 
+<table  > 
 <br>
 <tr>
 
@@ -32,7 +32,7 @@ $questions = questionsToObject(getQuestionsArray());
 
 else {?>
 <td> </td>
-<td style=background-color:red> </td>}
+<td style=background-color:red> </td>
 
 </tr>
 <?php }

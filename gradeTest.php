@@ -1,3 +1,5 @@
+<div class="gradetest">
+
 <?php
 
 include 'config.php';
@@ -23,9 +25,10 @@ if(isset($_POST['submitTest'])) {
 	if (isset($_POST['informationPermission']) && isset($_POST['email'])) {
 		header("Location: report.php?sendEmail=true&email=".$_POST['email']);
 	} else {
-		header("Location: report.php");
+		header("Location: report.php?sendEmail=false");
 	}
 	
 	
 }
-
+?>
+</div>
