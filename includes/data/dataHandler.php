@@ -74,6 +74,10 @@ function arrayToObject($array) {
 	return $question;
 }
 
+function countQuestions() {
+	return count(getQuestionsArray());
+}
+
 
 
 
