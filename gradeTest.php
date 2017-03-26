@@ -11,8 +11,10 @@ foreach($questions as $question) {
 	
 	if ($selectedAnswer == $question->getcAnswer()) {
 		echo "Question " . $questionCounter . " correct</br>";
+		$question->setGotCorrect(true);
 	} else {
 		echo "Question " . $questionCounter . " incorrect</br>";
+		$question->setGotCorrect(false);
 	}
 	$questionCounter++;
 }
