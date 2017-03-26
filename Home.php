@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'includes/config.php'; ?>
 <p align="center">
 <a href="WebsiteFramework.php">Home</a> -
 <a href="about.php">About Us</a> -
