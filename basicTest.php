@@ -4,26 +4,28 @@ include 'includes/sidebar.php';
 include 'config.php';
 include 'includes/data/dataHandler.php';
 
-$questions = getQuestionsArray();
+$questions = questionsToObject(getQuestionsArray() );
+
 ?>
 
 <div class="testingContainer">
 	<div class="questionContainer">
 		<form>
 			<?php
-			$counter = 1;
+			$questionCounter = 1;
 			foreach ($questions as $question){
-				echo "<p> Question " . $counter . ": " . $questions->getQuestion() . "</p>";
+				echo "<p> Question " . $questionCounter . ": " . $question->getQuestion() . "</p>";
 				
-				foreach ($questions->getQuestionArray() as $answer) {
-					echo "<ul class='answerList'>";
-					echo "<li>" . $answer . "</p>";
-					echo "</ul>";
+				$answerCounter = 1;
+				foreach ($question->getQuestionArray() as $answer) {
+					echo "<input type='radio' name='answer" . $answerCounter . "' />";
+					echo "<label class='answerLabel' for='answer" . $answerCounter ."'>" . $answer . "</label></br>";
+					$answerCounter++;
 				}
 				
-				echo "<p>" . $questions->getImageName() . "</p>";
+				echo "<p>" . $question->getImageName() . "</p>";
 				echo "</br>";
-				$counter++;
+				$questionCounter++;
 			}
 			?>
 		</form>
