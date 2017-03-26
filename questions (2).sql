@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2017 at 10:44 PM
+-- Generation Time: Mar 26, 2017 at 05:51 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -30,8 +30,8 @@ CREATE TABLE `questions` (
   `id` int(10) NOT NULL,
   `question` varchar(500) NOT NULL,
   `answers` longtext NOT NULL,
-  `disorderID` int(10) NOT NULL,
-  `correctAnswer` int(1) DEFAULT NULL,
+  `gotCorrect` int(10) NOT NULL,
+  `correctAnswer` text,
   `imageName` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -39,9 +39,12 @@ CREATE TABLE `questions` (
 -- Dumping data for table `questions`
 --
 
-INSERT INTO `questions` (`id`, `question`, `answers`, `disorderID`, `correctAnswer`, `imageName`) VALUES
-(1, 'test', 'test', 1, 0, NULL),
-(2, 'Who was the first President of the United States?', 'a:4:{s:1:"a";i:0;s:1:"b";i:1;s:1:"c";i:0;s:1:"d";i:0;}', 1, 1, NULL);
+INSERT INTO `questions` (`id`, `question`, `answers`, `gotCorrect`, `correctAnswer`, `imageName`) VALUES
+(19, 'What day is Christmas on?', 'a:4:{i:0;s:13:"December 13th";i:1;s:13:"December 29th";i:2;s:13:"December 25th";i:3;s:12:"December 7th";}', 0, 'December 25th', NULL),
+(20, 'What is 3 * 8?', 'a:4:{i:0;s:2:"32";i:1;s:1:"5";i:2;s:2:"16";i:3;s:2:"24";}', 0, '24', NULL),
+(21, 'Who is the current President of the United States?', 'a:4:{i:0;s:12:"Barack Obama";i:1;s:12:"Donald Trump";i:2;s:12:"Harry Truman";i:3;s:17:"George Washington";}', 0, 'Donald Trump', NULL),
+(40, 'What is the location pictured?', 'a:4:{i:0;s:8:"The city";i:1;s:9:"The beach";i:2;s:15:"The rain forest";i:3;s:11:"The prairie";}', 0, 'The beach', 'beach.jpg'),
+(42, 'What animal is pictured?', 'a:4:{i:0;s:4:"Deer";i:1;s:3:"Dog";i:2;s:3:"Cat";i:3;s:5:"Mouse";}', 0, 'Cat', 'CL0101_HERO-Cat-20160818.png');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +64,7 @@ ALTER TABLE `questions`
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
