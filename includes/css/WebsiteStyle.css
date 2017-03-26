@@ -93,8 +93,18 @@ body{
 
 }
 
+.questionImage {
+	height:50%;
+	width:50%;
+}
+
 .answer{
 	width: 400px;
+}
+
+#submitTestButton {
+	width:75px;
+	height:30px;
 }
 
 .floatContainer{
