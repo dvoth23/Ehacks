@@ -31,4 +31,5 @@ $questions = getQuestionsArray();
 	</div>
 
 </div>
+</html>
 
