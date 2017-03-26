@@ -1,5 +1,24 @@
 @CHARSET "ISO-8859-1";
 
+* {
+	padding:0px;
+	margin:0px;
+}
+
+a {
+	text-decoration:underline;
+	color:black;
+}
+
+ul {
+	list-style:none;
+}
+
+li {
+	margin:10px;
+}
+
+
 body{
 	margin: 0;
 	padding: 0;
@@ -7,8 +26,12 @@ body{
 }
 
 .sidebar{
+<<<<<<< HEAD
 	background-image: url("../images/background.jpg");
 	width: 20%;
+=======
+	width: auto;
+>>>>>>> refs/remotes/origin/master
 	height: 22%;
 	border: 1px solid black;
 	box-sizing: border-box;
@@ -16,11 +39,32 @@ body{
 	text-align: left;
 	font-size: 16px;
 	margin-left: 25px;
+	display:inline-block;
+	float:left;
 }
 .sidebar p{
 	text-align: left;
 	padding-left: 20px;
 	font-weight: bold;
+}
+
+.testingContainer {
+	display:inline-block;
+	margin: 0 auto;
+	width:60%;
+	float:left;
+	
+}
+
+.questionContainer {
+	display:block;
+	margin-left:30%;
+	margin-top:10%;
+}
+
+.answerList {
+	list-style:upper-alpha;
+	margin:20px;
 }
 
 .description{
