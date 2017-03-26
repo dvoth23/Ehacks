@@ -15,7 +15,7 @@ ul {
 }
 
 li {
-	margin:10px;
+	margin-left: 2%;
 }
 
 
@@ -26,12 +26,9 @@ body{
 }
 
 .sidebar{
-<<<<<<< HEAD
 	background-image: url("../images/background.jpg");
 	width: 20%;
-=======
 	width: auto;
->>>>>>> refs/remotes/origin/master
 	height: 22%;
 	border: 1px solid black;
 	box-sizing: border-box;
@@ -79,8 +76,8 @@ body{
 
 }
 
-.answers{
-
+.answer{
+	width: 400px;
 }
 
 .floatContainer{

@@ -1,11 +1,5 @@
 <?php
-<<<<<<< HEAD
-include 'config.php';
-include 'includes/header.php';
-include 'includes/sidebar.php';
-?>
 
-=======
 include 'includes/header.php';
 include 'includes/sidebar.php';
 include 'config.php';
@@ -38,4 +32,3 @@ $questions = getQuestionsArray();
 
 </div>
 
->>>>>>> refs/remotes/origin/master
