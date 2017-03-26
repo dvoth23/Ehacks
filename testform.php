@@ -57,7 +57,7 @@ function test_input($data) {
 <div class="testform">
 <h2>Custom Test Creation: </h2>
 <p><span class="error">* required field.</span></p>
-<form name="questionForm" method="post" action="includes/data/addQuestion.php">  
+<form name="questionForm" method="post" action="includes/data/addQuestion.php" enctype="multipart/form-data">  
 <!--
   Test Name: <input type="text" name="test" value="<?php //echo $test;?>">
   <span class="error">* <?php //echo $nameErr;?></span>
@@ -74,6 +74,8 @@ function test_input($data) {
 <input type="checkbox" name="correctAnswer4" value="selected4"/> <input class = "answer" type = "text" name = "q4" required/> <br>
   <span class="error"> <?php echo $answerError;?></span>
   <br><br>
-  <input type="submit" name="submit" value="Submit">  
+  <input type="file" name="qImage" />
+  </br></br>
+  <input type="submit" name="submitQuestion" value="Submit">  
 </form>
 </div>
