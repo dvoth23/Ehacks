@@ -1,3 +1,5 @@
+<div class="gradetest">
+
 <?php
 
 include 'config.php';
@@ -28,4 +30,5 @@ if(isset($_POST['submitTest'])) {
 	
 	
 }
-
+?>
+</div>
