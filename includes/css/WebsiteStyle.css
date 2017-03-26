@@ -141,3 +141,10 @@ body{
 	font-size: 24px;
 	text-decoration: underline;
 }
+
+.report {
+	
+	border:1px solid black;
+	text-align: center;
+	
+}
