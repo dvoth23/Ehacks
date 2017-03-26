@@ -4,6 +4,7 @@ class Question{
 	public $answers;
 	private $imageName;
 	private $cAnswer;
+	private $gotCorrect = false;
 	
 	
 	public function __construct($question, $answers, $imageName, $cAnswer)
@@ -29,6 +30,12 @@ class Question{
 	}
 	public function setImageName($imageName){
 		$this->imageName = $imageName;
+	}
+	public function setGotCorrect($gotCorrect) {
+		$this->gotCorrect = $gotCorrect;
+	}
+	public function isCorrect() {
+		return $this->gotCorrect;
 	}
 }
 ?> 
