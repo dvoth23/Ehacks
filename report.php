@@ -1,4 +1,5 @@
 <?php
+$questions = questionsToObject(getQuestionsArray() );
 ?>
 
 <h1 style=size:22px >RESULTS</h1>
@@ -8,7 +9,7 @@
 
 <th> Question  </th>
 <th> Correct </th>
-<th> Incorrect </th>
+<th> Incorrect </th>v
 
 </tr>
 
