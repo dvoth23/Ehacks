@@ -24,7 +24,7 @@ $questions = questionsToObject(getQuestionsArray());
 
 <td> <?php echo $i?>  </td>
 
-<?php  if ($questions[$i] ->isCorrect() == true)
+<?php  if ($questions[$i]->isCorrect() == true)
 { ?>
 <td style=background-color:green>   </td>
 <td> </td>
@@ -32,7 +32,7 @@ $questions = questionsToObject(getQuestionsArray());
 
 else {?>
 <td> </td>
-<td style=background-color:red> </td>}
+<td style=background-color:red> </td>
 
 </tr>
 <?php }

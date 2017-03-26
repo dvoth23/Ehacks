@@ -19,10 +19,10 @@ if (isset($_POST['submitQuestion'])) {
 		}
 	}
 	
-	if (isset($_FILES["qImage"])) {
+	if (isset($_FILES["qImage"]['name']) && !is_null($_FILES["qImage"]['name'])) {
 		uploadFile();
 		$imageName = $_FILES["qImage"]["name"];
-		echo $imageName;
+		echo $_FILES["qImage"]['name'];
 	}
 
 	setQuestion($question, $answers, $imageName, $correctAnswer);
@@ -55,7 +55,6 @@ function uploadFile() {
 	// Allow certain file formats
 	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 			&& $imageFileType != "gif" ) {
-				echo "bad file type</br>";
 				$uploadOk = 0;
 			}
 			// Check if $uploadOk is set to 0 by an error
@@ -72,4 +71,4 @@ function uploadFile() {
 
 
 
-//header('Location: ../../testform.php');
+header('Location: ../../testform.php');
