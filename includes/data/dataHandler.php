@@ -5,12 +5,12 @@ function setQuestion() {
 	$pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
-	$question = "Who was the first President of the United States?";
+	$question = "Who is the current President of the United States?";
 	$answers = [
-			'a' => 0,
-			'b' => 1,
-			'c' => 0,
-			'd' => 0
+			'a' => 'Barack Obama',
+			'b' => 'Donald Trump',
+			'c' => 'Harry Truman',
+			'd' => 'George Washington'
 	];
 	$correctAnswer;
 	foreach ($answers as $answer) {
@@ -44,6 +44,7 @@ function getDisorder() {
 	
 }
 
+
 function getQuestionsArray($disorderId = 0) {
 	
 	$questions = array();
@@ -60,18 +61,23 @@ function getQuestionsArray($disorderId = 0) {
 	} catch (PDOException $e) {
 		echo $e;
 	}
-	while ($row = $stmt->fetchAll()) {
+	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 		$questions[] = $row;
 	}
-	
-	return arrayToObject($questions);
+	return $questions;
 }
 
-function arrayToObject($array) {
-	$answers = unserialize($array[0][0]['answers']);
+function questionsToObject($questions) {
+	$questionsArray = array();
 	
-	$question  = new Question($array[0][0]['question'], $answers, $array[0][0]['imageName']);
-	return $question;
+	$questionsCounter = 0;
+	foreach ($questions as $question) {
+		$answers = unserialize($question['answers']);
+		$questionsArray[] = new Question($question['question'],
+								$answers, $question['imageName']);
+		$questionsCounter++;
+	}
+	return $questionsArray;
 }
 
 function countQuestions() {

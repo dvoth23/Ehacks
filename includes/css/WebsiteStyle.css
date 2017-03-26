@@ -77,6 +77,10 @@ body{
 	margin:20px;
 }
 
+.answerLabel {
+	display:inline-block;
+}
+
 .description{
 	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
 	justify-content: center;
