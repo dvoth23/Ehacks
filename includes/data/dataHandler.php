@@ -1,6 +1,6 @@
 <?php
 
-function setQuestion($question, $answers, $correctAnswer) {
+function setQuestion($question, $answers, $imageName = null, $correctAnswer) {
 
 	$pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,8 +22,8 @@ function setQuestion($question, $answers, $correctAnswer) {
 // 	$disorder = 1;
 	
 	$answers = serialize($answers);
-	$sql = "INSERT INTO questions(question, answers, correctAnswer) 
-			VALUES (:q, :a, :ca)";
+	$sql = "INSERT INTO questions(question, answers, correctAnswer, imageName) 
+			VALUES (:q, :a, :ca, :i)";
 	
 	try {
 		$stmt = $pdo->prepare($sql);
@@ -31,7 +31,8 @@ function setQuestion($question, $answers, $correctAnswer) {
 		$stmt->bindParam(':q', $question);       
 		$stmt->bindParam(':a', $answers); 
 		$stmt->bindParam(':ca', $correctAnswer);
-		echo $correctAnswer . "!!";                                      
+		$stmt->bindParam(':i', $imageName);
+		
 		$stmt->execute(); 
 	} catch (PDOException $e) {
 		echo $e;
