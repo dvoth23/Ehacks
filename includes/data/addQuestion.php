@@ -19,53 +19,70 @@ if (isset($_POST['submitQuestion'])) {
 		}
 	}
 	
-	if (uploadFile()) {
+	if (isset($_FILES["qImage"])) {
+		uploadFile();
 		$imageName = $_FILES["qImage"]["name"];
+		echo $imageName;
 	}
 
 	setQuestion($question, $answers, $imageName, $correctAnswer);
 }
 
 function uploadFile() {
-	$target_dir = "C:/xampp/htdocs/Ehacks/includes/images";
-	$target_file = $target_dir . basename($_FILES["qImage"]["name"]);
-	$uploadOk = 1;
-	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-	// Check if image file is a actual image or fake image
-	if(isset($_POST["submit"])) {
-		$check = getimagesize($_FILES["qImage"]["tmp_name"]);
-		if($check !== false) {
-			echo "size good</br>"; 
-			$uploadOk = 1;
-		} else {
-			echo "size bad</br>";
-			$uploadOk = 0;
-		}
+// 	$target_dir = "C:/xampp/htdocs/Ehacks/includes/images";
+// 	$target_file = $target_dir . basename($_FILES["qImage"]["name"]);
+// 	$uploadOk = 1;
+// 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// 	// Check if image file is a actual image or fake image
+// 	if(isset($_POST["submit"])) {
+// 		$check = getimagesize($_FILES["qImage"]["tmp_name"]);
+// 		if($check !== false) {
+// 			echo "size good</br>"; 
+// 			$uploadOk = 1;
+// 		} else {
+// 			echo "size bad</br>";
+// 			$uploadOk = 0;
+// 		}
+// 	}
+// 	// Check if file already exists
+// 	if (file_exists($target_file)) {
+// 		$uploadOk = 0;
+// 	}
+// 	// Check file size
+// 	if ($_FILES["qImage"]["size"] > 500000) {
+// 		$uploadOk = 0;
+// 	}
+// 	// Allow certain file formats
+// 	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+// 			&& $imageFileType != "gif" ) {
+// 				echo "bad file type</br>";
+// 				$uploadOk = 0;
+// 			}
+// 			// Check if $uploadOk is set to 0 by an error
+// 			if ($uploadOk == 0) {
+// 				// if everything is ok, try to upload file
+// 			} else {
+// 				if (move_uploaded_file($_FILES["qImage"]["tmp_name"], $target_file)) {
+// 					echo "The file ". basename( $_FILES["qImage"]["name"]). " has been uploaded.";
+// 				} else {
+// 					echo "Sorry, there was an error uploading your file.";
+// 				}
+// 			}
+
+	$uploaddir = "C:/xampp/htdocs/Ehacks/includes/images/";
+	$uploadfile = $uploaddir . basename($_FILES['qImage']['name']);
+	
+	echo '<pre>';
+	if (move_uploaded_file($_FILES['qImage']['tmp_name'], $uploadfile)) {
+		echo "File is valid, and was successfully uploaded.\n";
+	} else {
+		echo "Possible file upload attack!\n";
 	}
-	// Check if file already exists
-	if (file_exists($target_file)) {
-		$uploadOk = 0;
-	}
-	// Check file size
-	if ($_FILES["qImage"]["size"] > 500000) {
-		$uploadOk = 0;
-	}
-	// Allow certain file formats
-	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-			&& $imageFileType != "gif" ) {
-				echo "bad file type</br>";
-				$uploadOk = 0;
-			}
-			// Check if $uploadOk is set to 0 by an error
-			if ($uploadOk == 0) {
-				// if everything is ok, try to upload file
-			} else {
-				if (move_uploaded_file($_FILES["qImage"]["tmp_name"], $target_file)) {
-					echo "The file ". basename( $_FILES["qImage"]["name"]). " has been uploaded.";
-				} else {
-					echo "Sorry, there was an error uploading your file.";
-				}
-			}
+	
+	echo 'Here is some more debugging info:';
+	print_r($_FILES);
+	
+	print "</pre>";
 }
 
 
